@@ -1,0 +1,35 @@
+CREATE TABLE Book (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(100) NOT NULL,
+    author VARCHAR(100) NOT NULL,
+    borrower_mat 	VARCHAR(8),
+    status 	VARCHAR(10)
+);
+
+CREATE TABLE Student (
+    matricule VARCHAR(8),
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    primary key (matricule)
+);
+
+CREATE TABLE BorrowingLog (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    book_id INT NOT NULL,
+    stu_mat  VARCHAR(8) NOT NULL,
+    borrow_date DATE NOT NULL,
+    return_date DATE
+);
+
+
+CREATE TABLE ReservationQueue (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    book_id INT NOT NULL,
+    stu_mat VARCHAR(8) NOT NULL,
+    reserve_date DATE NOT NULL
+);
+
+CREATE TABLE Admin (
+	name VARCHAR(30),
+    email VARCHAR(30)
+);
